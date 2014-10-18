@@ -1,0 +1,41 @@
+/* Put your CSS here */
+html, body {
+    margin: 20px;
+    font-family: 'Droid Serif';
+    width: 90%;
+}
+
+.options {
+    font-size: 15px;
+}
+
+.options ul {
+    list-style: none;
+}
+
+.options ul li {
+}
+
+.options ul li a {
+    display : block;
+    margin: 10px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    line-height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    padding: 9px 10px 9px 15px;
+    cursor: pointer;
+}
+
+.question {
+    display : block;
+    margin: 10px;
+    background-color: #e8dbff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF;
+    padding-left: 10px;
+}

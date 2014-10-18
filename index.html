@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Team-Player Survey</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<script type="text/x-handlebars">
+    <h1>Team-Player Survey</h1>
+
+    {{outlet}}
+    {{outlet modal}}
+</script>
+
+<script type="text/x-handlebars" id="index">
+    <div>
+        <h2>Purpose</h2>
+
+        <p>The Team-Player Survey will help you identify your style as a team player. The results will lead you to an assessment of your current strengths and provide a basis for a plan to increase your effectiveness as a team player.</p>
+
+        <p>Teams may use the survey to develop a profile of team strengths and to discuss strategies for increasing team effectiveness.</p>
+    </div>
+
+    <div>
+        <h2>Directions</h2>
+
+        <p>First, this is a survey, and, therefore, there are no right or wrong answers. Please answer each item according to how you honestly feel you function now as a team member rather than how you used to be or how you would like to be.</p>
+
+        <p>You will be asked to complete eighteen sentences. Each sentence has four possible endings. Please rank the endings in the order in which you feel each one applies to you.</p>
+    </div>
+
+    <div>
+        <button {{action 'startSurvey' this}}>Start!</button>
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="questions">
+    <div>
+        <div>Please rank the endings in the order in which you feel each one applies to you.</div>
+
+        <button {{action 'openSummary' 'summary' model}}>Score!</button>
+
+        <div>
+            {{#each controller }}
+            <div class="question">
+                <p>{{text}}</p>
+                <div class="options">
+
+                    <ul class="sortable">
+                    {{#each options }}
+                        <li {{bind-attr id=elementId}}><a href="#">{{text}}</a> </li>
+                    {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <button {{action 'openSummary' 'summary' model}}>Score!</button>
+</script>
+
+<script type="text/x-handlebars" id="summary">
+    {{#modal-dialog title=view.title close='closeSummary'}}
+
+    {{debug 'summary'}}
+
+    {{#each summary.primaries }}
+        {{debug 'loop'}}
+        {{debug this}}
+        <p>key: {{[0]}} = val: {{[1]}}</p>
+        {{partial [0] this }}
+    {{/each}}
+
+    {{#each summary.secondaries }}
+    <p>secondary key: {{[0]}} = val: {{[1]}}</p>
+    {{/each}}
+
+    {{/modal-dialog}}
+</script>
+
+<script type="text/x-handlebars" id="contributor">
+    {{debug "contributor"}}
+    {{debug this}}
+    <p>contributor</p>
+</script>
+
+<script type="text/x-handlebars" id="collaborator">
+    {{debug "collaborator"}}
+    {{debug this}}
+    <p>collaborator</p>
+</script>
+
+<script type="text/x-handlebars" id="communicator">
+    {{debug "communicator"}}
+    {{debug this}}
+    <p>communicator</p>
+</script>
+
+<script type="text/x-handlebars" id="challenger">
+    {{debug "challenger"}}
+    {{debug this}}
+    <p>challenger</p>
+</script>
+
+<script type="text/x-handlebars" id="components/modal-dialog">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    {{yield}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="js/libs/jquery-1.10.2.js"></script>
+<script src="js/libs/jquery-ui.js"></script>
+<script src="js/libs/handlebars-1.1.2.js"></script>
+<script src="js/libs/bootstrap.js"></script>
+<script src="js/libs/ember-1.5.1.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
