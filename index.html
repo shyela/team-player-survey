@@ -69,44 +69,37 @@
 <script type="text/x-handlebars" id="summary">
     {{#modal-dialog title=view.title close='closeSummary'}}
 
-    {{debug 'summary'}}
-
-    {{#each summary.primaries }}
-        {{debug 'loop'}}
-        {{debug this}}
-        <p>key: {{[0]}} = val: {{[1]}}</p>
-        {{partial [0] this }}
-    {{/each}}
-
-    {{#each summary.secondaries }}
-    <p>secondary key: {{[0]}} = val: {{[1]}}</p>
-    {{/each}}
+    <div class="style-container">
+        {{#each summary.primaries }}
+            {{partial [0]}}
+        {{/each}}
+    </div>
 
     {{/modal-dialog}}
 </script>
 
 <script type="text/x-handlebars" id="contributor">
-    {{debug "contributor"}}
-    {{debug this}}
-    <p>contributor</p>
+    <div class="style-name">Contributor ({{[1]}}/180)</div>
+    <div class="style-key-words">dependable, responsible, organized, efficient, logical, clear, systematic, relevant, <nobr>and proficient</nobr></div>
+    <div class="style-description">You are highly task oriented and focus on getting tasks/work done in a very efficient and quality manner.</div>
 </script>
 
 <script type="text/x-handlebars" id="collaborator">
-    {{debug "collaborator"}}
-    {{debug this}}
-    <p>collaborator</p>
+    <div class="style-name">Collaborator ({{[1]}}/180)</div>
+    <div class="style-key-words">cooperative, flexible, confident, conceptual, open, accommodating, generous, visionary, <nobr>and imaginative</nobr></div>
+    <div class="style-description">You are highly goal oriented and focus on establishing goals and then continuing to bring the team back to that focus.</div>
 </script>
 
 <script type="text/x-handlebars" id="communicator">
-    {{debug "communicator"}}
-    {{debug this}}
-    <p>communicator</p>
+    <div class="style-name">Communicator ({{[1]}}/180)</div>
+    <div class="style-key-words">supportive, encouraging, relaxed, tactful, helpful, friendly, patient, informal, considerate, <nobr>and spontaneous</nobr></div>
+    <div class="style-description">You are very process oriented individuals. You often help teams to focus on the more enjoyable side of our team behaviors, and you also help to develop needed processes.</div>
 </script>
 
 <script type="text/x-handlebars" id="challenger">
-    {{debug "challenger"}}
-    {{debug this}}
-    <p>challenger</p>
+    <div class="style-name">Challenger ({{[1]}}/180)</div>
+    <div class="style-key-words">candid, ethical, questioning, honest, truthful, outspoken, principled, <nobr>and adventurous</nobr></div>
+    <div class="style-description">You are what we describe as questioners. You are a very important part of the team as you help to ask the questions that don’t often get asked. Why are we doing certain things a certain way? Are there other ways of doing something? Can we do this faster, cheaper, better?</div>
 </script>
 
 <script type="text/x-handlebars" id="components/modal-dialog">
@@ -114,7 +107,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">{{title}}</h4>
+                    <h3 class="modal-title">{{title}}</h3>
                 </div>
                 <div class="modal-body">
                     {{yield}}
