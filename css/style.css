@@ -55,17 +55,17 @@ html, body {
     font-style: italic;
     font-size: 1.3em;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 10px auto;
     width: 80%;
 }
 
 .style-description {
     font-weight: bold;
     font-size: 1.1em;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 40px;
+    margin: auto 20px 40px 20px;
+}
+
+.centered {
+    margin: auto auto auto auto;
+    text-align: center;
 }

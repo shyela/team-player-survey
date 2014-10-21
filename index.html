@@ -59,9 +59,9 @@
             </div>
             {{/each}}
         </div>
-    </div>
 
-    <button {{action 'openSummary' 'summary' model}}>Score!</button>
+        <div class="centered"><button {{action 'openSummary' 'summary' model}}>See your primary team-player style</button></div>
+    </div>
 </script>
 
 <script type="text/x-handlebars" id="summary">
@@ -91,13 +91,13 @@
 <script type="text/x-handlebars" id="communicator">
     <div class="style-name">Communicator ({{[1]}}/180)</div>
     <div class="style-key-words">supportive, encouraging, relaxed, tactful, helpful, friendly, patient, informal, considerate, <nobr>and spontaneous</nobr></div>
-    <div class="style-description">You are a very process oriented individual. You often help teams to focus on the more enjoyable side of our team behaviors, and you also help to develop needed processes.</div>
+    <div class="style-description">You are very process-oriented. You often help the team to focus on the more enjoyable side of its behaviors, and you also help to develop needed processes.</div>
 </script>
 
 <script type="text/x-handlebars" id="challenger">
     <div class="style-name">Challenger ({{[1]}}/180)</div>
     <div class="style-key-words">candid, ethical, questioning, honest, truthful, outspoken, principled, <nobr>and adventurous</nobr></div>
-    <div class="style-description">You are what we describe as a questioner. You are a very important part of the team as you help to ask the questions that don’t often get asked. Why are we doing certain things a certain way? Are there other ways of doing something? Can we do this faster, cheaper, better?</div>
+    <div class="style-description">You are a questioner. You are a very important part of the team as you help to ask the questions that don’t often get asked. Why are we doing certain things a certain way? Are there other ways of doing something? Can we do this faster, cheaper, better?</div>
 </script>
 
 <script type="text/x-handlebars" id="components/modal-dialog">
@@ -120,6 +120,7 @@
 
 <script src="js/libs/jquery-1.10.2.js"></script>
 <script src="js/libs/jquery-ui.js"></script>
+<script src="js/libs/jquery.ui.touch-punch.min.js"></script>
 <script src="js/libs/handlebars-1.1.2.js"></script>
 <script src="js/libs/bootstrap.js"></script>
 <script src="js/libs/ember-1.5.1.js"></script>

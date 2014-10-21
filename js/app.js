@@ -189,19 +189,6 @@ App.SummaryController = Ember.ObjectController.extend({
 App.SummaryView = Ember.View.extend({
     summary: Ember.computed.alias("controller.summary"),
 
-
-//<p>contributor: {{}}</p>
-//<p>collaborator: {{scores.collaborator}}</p>
-//<p>communicator: {{scores.communicator}}</p>
-//<p>challenger: {{scores.challenger}}</p>
-    /*
-
-
-     return { data:scores, ordered:ordered, primaries:primaries, secondaries:secondaries,
-     singlePrimary: (),
-     primaryLabels: foo, secondaryLabels: foo };*/
-
-
     title: function() {
         var summary = this.get('summary');
         var singlePrimary = summary.get('primaries').length == 1;
@@ -212,9 +199,6 @@ App.SummaryView = Ember.View.extend({
             return "My primary team-player styles";
         }
     }.property('summary')
-
-
-
 });
 
 
